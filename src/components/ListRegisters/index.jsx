@@ -6,6 +6,18 @@ export function ListRegisters() {
 
   const { transactions } = useTransactions();
 
+  const formatDate = (dateInput) => {
+    const date = dateInput.split('-');
+
+    const year = date[0];
+    const month = date[1];
+    const day = date[2].split('T')[0];
+
+    return (`${day}/${month}/${year}`);
+  };
+
+  const formatAmount = (amount) => amount.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+
   return (
     <Container>
       <h4>Listagem de Registros:</h4>
@@ -34,11 +46,11 @@ export function ListRegisters() {
                 <tr key={transaction.id}>
                   <td>{transaction.title}</td>
                   <td className={transaction.type}>
-                    {transaction.amount}
+                    { formatAmount(transaction.amount) }
                   </td>
                   <td>{transaction.category}</td>
                   <td className={transaction.type}>
-                    {transaction.createdAt}
+                    { formatDate(transaction.createdAt) }
                   </td>
                 </tr>
               );

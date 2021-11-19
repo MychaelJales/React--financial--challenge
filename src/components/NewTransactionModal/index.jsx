@@ -20,7 +20,15 @@ export function NewTransactionModal({ isOpen, onRequestClose }) {
 
   async function handleCreateNewTransaction(event) {
     // TO DO - Implementar o envio dos dados dos formulario para cadastro na listagem
-
+    event.preventDefault();
+    const createdAt = new Date();
+    const NewTransaction = { title, type, category, amount, createdAt }
+    createTransaction(NewTransaction)
+    onRequestClose();
+    setTitle('');
+    setAmount(0);
+    setCategory('');
+    setType('deposit');
   }
 
   return (
@@ -29,6 +37,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }) {
       onRequestClose={onRequestClose}
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
+      ariaHideApp={false}
     >
 
       <button type="button" onClick={onRequestClose} className="react-modal-close">

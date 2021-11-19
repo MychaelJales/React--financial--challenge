@@ -6,7 +6,6 @@ import { TransactionsProvider } from "./contexts/useTransactions";
 
 import Routes from "./routes/index";
 
-
 function App() {
   return (
     <BrowserRouter>

@@ -11,6 +11,12 @@ export const GlobalStyle = createGlobalStyle`
   --blue-light: #2eb9ef;
   --text-title: #363f5f;
   --text-body: #969cb3;
+  .deposit {
+    color: #33cc95;
+  }
+  .withdraw {
+    color: #e52e40;
+  }
 }
 
 *{
@@ -96,7 +102,5 @@ input:focus{
     filter: brightness(0.8);
   }
 }
-
-
 
 `
