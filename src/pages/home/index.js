@@ -13,10 +13,12 @@ function Home() {
 
     function handleOpenNewTransactionmodal() {
         // TO DO - Implementar a alteracao do state para mostrar modal
+        setIsNewTransactionModalOpen(true);
     }
     
     function handleCloseNewTransactionmodal() {
         // TO DO - Implementar a alteracao do state para ocultar modal
+        setIsNewTransactionModalOpen(false);
     }
 
 
